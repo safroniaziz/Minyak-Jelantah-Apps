@@ -19,7 +19,7 @@ class UserController extends Controller
     }
 
     public function login(Request $request){
-        try{
+        // try{
             $request->validate([
                 'email' =>  'required',
                 'password' =>  'required',
@@ -44,12 +44,12 @@ class UserController extends Controller
                 'token_type'    =>  'Bearer',
                 'user'          =>  $user,
             ], 'Authenticated');
-        } catch(Exception $error){
-            return ResponseFormatter::error([
-                'message'   =>  'Something went wrong',
-                'error'     =>  $error,
-            ], 'Authentication Failed', 500);
-        }
+        // } catch(Exception $error){
+        //     return ResponseFormatter::error([
+        //         'message'   =>  'Something went wrong',
+        //         'error'     =>  $error,
+        //     ], 'Authentication Failed', 500);
+        // }
     }
 
     public function register(Request $request)
