@@ -110,7 +110,7 @@ class UserController extends Controller
 
             //store your file into database
             $user = Auth::user();
-            $user->profile_photo_path = $file;
+            $user->foto = $file;
             $user->update();
 
             return ResponseFormatter::success([$file],'File successfully uploaded');
