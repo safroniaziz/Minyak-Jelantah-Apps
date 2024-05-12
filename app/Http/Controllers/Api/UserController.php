@@ -65,13 +65,12 @@ class UserController extends Controller
             ]);
 
             User::create([
-                'name' => $request->name,
+                'nama_lengkap' => $request->name,
                 'email' => $request->email,
-                'address' => $request->address,
-                'houseNumber' => $request->houseNumber,
-                'phoneNumber' => $request->phoneNumber,
-                'city' => $request->city,
+                'nomor_whatsapp' => $request->address,
+                'alamat' => $request->houseNumber,
                 'password' => Hash::make($request->password),
+                'role'      =>  'mitra',
             ]);
 
             $user = User::where('email', $request->email)->first();
